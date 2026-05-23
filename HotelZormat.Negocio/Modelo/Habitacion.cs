@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System;
-
 namespace HotelZormat.Negocio.Modelo
 {
-    /// <summary>
-    /// Representa una habitación del hotel.
-    /// /// </summary>
+
+    /// TODO-- Representa una habitación del hotel.
+
     public class Habitacion
     {
         public int Id { get; set; }

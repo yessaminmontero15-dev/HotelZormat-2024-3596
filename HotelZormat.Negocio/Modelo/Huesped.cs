@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace HotelZormat.Negocio.Modelo
 {
-    /// <summary>
+   
     /// Representa un huésped del hotel (con cédula o pasaporte).
-    /// /// </summary>
     public class Huesped
     {
         public int Id { get; set; }
