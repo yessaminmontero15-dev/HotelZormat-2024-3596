@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Calentamiento/Calentamiento.csproj" />
+  <Project Path="HotelZormat.Negocio/HotelZormat.Negocio.csproj" Id="e6b47a30-dcb7-491b-a715-61fc4dbb56a4" />
+  <Project Path="HotelZormat/HotelZormat.csproj" Id="97190665-66ee-4e07-b2a1-da24fbcd0d52" />
+  <Project Path="HotelZormatDatos/HotelZormat.Datos.csproj" Id="6a37fabd-6c42-48b1-afc8-b148c8717bbf" />
+</Solution>
