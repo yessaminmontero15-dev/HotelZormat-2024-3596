@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -113,32 +115,36 @@ namespace HotelZormat
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            btnGuardar.Enabled = false; 
-
+            btnGuardar.Enabled = false;
             try
             {
-                ReservaService.GuardarHabitacion(hab);
+                var hab = new Habitacion
+                {
+                    Numero = int.Parse(txtBuscar.Text),
+                    Tipo   = cboTipo.SelectedItem?.ToString() ?? "",
+                    Estado = lblEstado.Text,
+                    Piso   = 3
+                };
+
+                reservaService.GuardarHabitacion(hab);
                 MessageBox.Show("Habitación guardada correctamente.", "Éxito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (HabitacionOcupadaException ex)
             {
-                
-                MessageBox.Show($"La habitación {ex.NumeroHabitacion} ya está ocupada. No se puede guardar.",
+                MessageBox.Show($"La habitación {ex.NumeroHabitacion} está ocupada.",
                     "Habitación ocupada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                
                 MessageBox.Show($"Error inesperado: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                btnGuardar.Enabled = true; 
+                btnGuardar.Enabled = true;
             }
-
-
+        
         }
 
         private void button1_Click(object sender, EventArgs e)

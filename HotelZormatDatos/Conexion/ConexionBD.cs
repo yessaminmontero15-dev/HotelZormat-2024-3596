@@ -23,5 +23,8 @@ namespace HotelZormat.Datos.Conexion
         {
             return new SqlConnection(_cadena);
         }
+
+
+         
     }
 }
