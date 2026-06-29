@@ -1,4 +1,5 @@
-﻿using HotelZormat.Negocio.Servicios;
+﻿using HotelZormat.Negocio.Modelo;
+using HotelZormat.Negocio.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelZormat.Negocio.Modelo;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace HotelZormat
 {
@@ -112,29 +113,29 @@ namespace HotelZormat
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            btnGuardar.Enabled = false; // deshabilitar antes de llamar al servicio
+            btnGuardar.Enabled = false; 
 
             try
             {
-                ReservaService.GuardarHabitacion(/* datos del form */);
+                ReservaService.GuardarHabitacion(hab);
                 MessageBox.Show("Habitación guardada correctamente.", "Éxito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (HabitacionOcupadaException ex)
             {
-                // excepción específica del dominio — usa su propiedad NumeroHabitacion
+                
                 MessageBox.Show($"La habitación {ex.NumeroHabitacion} ya está ocupada. No se puede guardar.",
                     "Habitación ocupada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                // catch genérico para cualquier otro error
+                
                 MessageBox.Show($"Error inesperado: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                btnGuardar.Enabled = true; // SIEMPRE se reactiva
+                btnGuardar.Enabled = true; 
             }
 
 

@@ -24,16 +24,17 @@ namespace HotelZormat.Negocio.Modelo
         {
             return Estado == "Disponible";
         }
-        public class HabitacionOcupadaException : Exception
-        {
-            public int NumeroHabitacion { get; }
+    }
 
-            public HabitacionOcupadaException(int numero)
-                : base($"La habitación {numero} está ocupada.")
-            {
-                NumeroHabitacion = numero;
-            }
+    public class HabitacionOcupadaException : Exception
+    {
+        public int NumeroHabitacion { get; }
+
+        public HabitacionOcupadaException(int numero)
+            : base($"La habitación {numero} está ocupada.")
+        {
+            NumeroHabitacion = numero;
         }
     }
-    
+
 }
