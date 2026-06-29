@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using HotelZormat.Negocio.Modelo;
+using HotelZormat.Negocio.Servicios;
 namespace HotelZormat.Negocio.Modelo
 {
 
@@ -23,5 +24,16 @@ namespace HotelZormat.Negocio.Modelo
         {
             return Estado == "Disponible";
         }
+        public class HabitacionOcupadaException : Exception
+        {
+            public int NumeroHabitacion { get; }
+
+            public HabitacionOcupadaException(int numero)
+                : base($"La habitación {numero} está ocupada.")
+            {
+                NumeroHabitacion = numero;
+            }
+        }
     }
+    
 }
