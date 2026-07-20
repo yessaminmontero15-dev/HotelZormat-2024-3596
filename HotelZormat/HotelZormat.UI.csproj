@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormGestionHabitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestionHabitaciones.Designer.cs">
+      <DependentUpon>FormGestionHabitaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionHabitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,7 +66,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmGestionHabitaciones.resx">
+    <EmbeddedResource Include="FormGestionHabitaciones.resx">
+      <DependentUpon>FormGestionHabitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionHabitaciones.resx">
       <DependentUpon>frmGestionHabitaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
